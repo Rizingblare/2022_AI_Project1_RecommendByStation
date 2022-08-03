@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{stationInfo.stationKor}}역</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body class="container">
+        <div style="float:left">
+            <div>
+                <img src="/static/recommendByStation/stations/{{stationInfo.stationEng}}.JPG" usemap="#image-map">
+                <map name="image-map">
+                    <area target="" alt="Before" title="Before" href="/Goejeong/" coords="20,109,84,19" shape="rect">
+                    <area target="" alt="Next" title="Next" href="/Seodaesin/" coords="295,109,360,19" shape="rect">
+                </map>
+            </div>
+            <h1>{{stationInfo.stationKor}}</h1>
+            <h1>{{stationInfo.stationEng}}</h1>
+        </div>
+        <div style= "padding-left:450px">
+            <button style="margin-top:20px; margin-left:510px;" onclick="location.href='/index/'">노선도로 돌아가기</button>
+            <h3><p class="text-info"><b>역명 및 지명 유래</b></p></h3>
+            <h6>{{stationInfo.stationTip}}</h6>
+            <br>
+        </div>
+        <div style="padding-left:700px;">
+            <table>
+                <td><b>편의 시설 정보: </b></td>
+                <td> </td>
+                <td>물품보관함</td>
+                <td>
+                    {% if stationInfo.stationItemStorage %}
+                    <img src="/static/recommendByStation/item.png" class="rounded" alt="Cinque Terre" width="50">
+                    {% else %}
+                    <img src="/static/recommendByStation/x.png" class="rounded" alt="Cinque Terre" width="50">
+                    {% endif %}
+                </td>
+                <td>자전거보관함</td>
+                <td>
+                    {% if stationInfo.stationBikeStorage %}
+                    <img src="/static/recommendByStation/bike.png" class="rounded" alt="Cinque Terre" width="50">
+                    {% else %}
+                    <img src="/static/recommendByStation/x.png" class="rounded" alt="Cinque Terre" width="50">
+                    {% endif %}
+                </td>
+            </table>
+        </div>
+        {% for idx,name,score,imgURL,visitNum,blogNum,visitSec,blogSec,totalScore in top10Store %}
+        <div style="width:50%; float:left; border: 5px ridge white; border-radius: 5px; background-color: #DFE8CC;" class="container p-3 my-3">
+            <h1 style="width:20%; padding-left: 15px; border: 1px ridge white; border-radius: 5px; background-color: #F7F6E7;">{{forloop.counter}}위</h1>
+            <img src="{{imgURL}}"; onerror="this.onerror=null; this.src='/static/recommendByStation/noimg.jpg';" style="max-width: 500px;">
+            <div style="display:inline-block;">
+                <p>점포명:</p> <h5>{{name}}</h5>
+                <br>
+                <p><b>종합 평점: {{totalScore}}</b></p>
+                <p>별점: {{score}}</p>
+                <p>방문자 리뷰 수: {{visitNum}}개</p>
+                <p>블로그 리뷰 수: {{blogNum}}개</p>
+            </div>
+        </div>
+        {% endfor %}
+</body>
+</html>
