@@ -1,6 +1,7 @@
 # 부산 지하철 1호선 역별 맛집 추천 시스템
 ## 개요
 공공데이터와 Python 웹 크롤링을 활용한 추천 시스템
+- Selenium, BeautifulSoup을 활용한 파이썬 웹 크롤링, Django를 통한 배포
 
 ## 배경 및 기획의도
 - 코로나 관련 규제 완화
@@ -28,7 +29,3 @@
 ![image](https://user-images.githubusercontent.com/77480122/227095473-4c645b48-7642-43ef-9368-97db894cfef8.png)
 ![image](https://user-images.githubusercontent.com/77480122/227095276-47b7b2e2-ab86-4c70-bdc9-3eae183c345c.png)
 
-
-
-Selenium, BeautifulSoup을 활용한 파이썬 웹 크롤링, Django를 통한 배포
-(첫 번째 프로젝트, 프로젝트 기반 AI 빅데이터 융합인재 양성 과정)
