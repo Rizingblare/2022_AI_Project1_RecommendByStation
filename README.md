@@ -25,7 +25,10 @@
 ![image](https://user-images.githubusercontent.com/77480122/209511409-c96943a0-e101-47b2-8dbe-cf432f465d00.png)
 
 ## 화면 UI
-![image](https://user-images.githubusercontent.com/77480122/209513519-90ef31c3-5f72-4c91-acc8-43ce727b9ada.png)
+![image](https://user-images.githubusercontent.com/77480122/227095473-4c645b48-7642-43ef-9368-97db894cfef8.png)
+![image](https://user-images.githubusercontent.com/77480122/227095276-47b7b2e2-ab86-4c70-bdc9-3eae183c345c.png)
+
+
 
 Selenium, BeautifulSoup을 활용한 파이썬 웹 크롤링, Django를 통한 배포
 (첫 번째 프로젝트, 프로젝트 기반 AI 빅데이터 융합인재 양성 과정)
